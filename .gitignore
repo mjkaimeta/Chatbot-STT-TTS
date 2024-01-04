@@ -7,10 +7,14 @@ __pycache__/
 *.so
 
 # ignore gross general building file that no one else should have to see because it's gross
-*.ipnyb
+*.ipynb
 
 # ignore all logged convos but maintain main data dir
 data/*
+!data/.gitignore
+
+# .DS_Store
+.DS_Store
 
 # Distribution / packaging
 .Python
