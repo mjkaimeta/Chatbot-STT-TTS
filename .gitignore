@@ -6,6 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
+# ignore gross general building file that no one else should have to see because it's gross
+*.ipnyb
+
+# ignore all logged convos but maintain main data dir
+data/*
+
 # Distribution / packaging
 .Python
 build/
