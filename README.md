@@ -36,7 +36,9 @@ NOTES:
 
 1. The first time you run this, you will likely be prompted to download the LLM currently used in the framework. This is a relatively very small LLM, so the quality of the conversation will be poor compared to what we are used to.
 
-2. Running this file should begin a conversation with the model in your CLI. Once began, the conversation will go indefinitely until one of the statements mentioned in the `break_conditions.txt` file are found in the transcription of a user's turn, at which point the model will conclude the conversation, and a conversation log will be created. Feel free to add more keywords/break conditions here or remove existing ones.
+2. Speak as cleary as you can. This may seem unnatural, but this Speech-to-Text module is not very high-quality, so it can easily produce innacurate results. Similar to the rest of the pieces of this framework, the idea here is not that this will be the one used in production, but instead that this specific STT software can be replaced with something else conceptually equivalent as need be (and it currently definitely be).
+
+3. Running this file should begin a conversation with the model in your CLI. Once began, the conversation will go indefinitely until one of the statements mentioned in the `break_conditions.txt` file are found in the transcription of a user's turn, at which point the model will conclude the conversation, and a conversation log will be created. Feel free to add more keywords/break conditions here or remove existing ones.
 
 ## Future Work & Features
 
