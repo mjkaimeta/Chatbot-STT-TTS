@@ -24,21 +24,25 @@ $ conda env create -f environment.yaml
 $ conda activate jarvis
 ```
 
-4. You should now be able to use the model and have a conversation. Ensure you are in the right directory ("Chatbot-STT-TTS"), and run:
+## Running Everything - main.py
+
+You should now be able to use the model and have a conversation. Ensure you are in the right directory "Chatbot-STT-TTS/", and enter:
 
 ```
 $ python main.py
 ```
 
-## Running Everything - `main.py`
+NOTES:
 
-Running this file should begin a conversation with the model in your CLI. Once began, the conversation will go indefinitely until one of the statements mentioned in the "break_conditions.txt" file are found in the transcription of a user's turn, at which point the model will conclude the conversation, and a conversation log will be created. This is a turn-by-turn breakdown of the conversation. Currently, the log only has the transcription of the user's turns, and the model's turns.
+1. The first time you run this, you will likely be prompted to download the LLM currently used in the framework. This is a relatively very small LLM, so the quality of the conversation will be poor compared to what we are used to.
+
+2. Running this file should begin a conversation with the model in your CLI. Once began, the conversation will go indefinitely until one of the statements mentioned in the `break_conditions.txt` file are found in the transcription of a user's turn, at which point the model will conclude the conversation, and a conversation log will be created. Feel free to add more keywords/break conditions here or remove existing ones.
 
 ## Future Work & Features
 
 RAG & Context
 - Implement some sort of context across conversational turns. Current model does not have this in any capacity
-- RAG is currently not implemented in any way in this chatbot, but with how things are laid out, it should be straightforward to create a RAG and/or contextually aware chatbot separate from this framework, so long as the LLM can take text input (user turn) and return text (model turn), which can then be easily added to this
+- RAG is currently not implemented in any way in this chatbot, but with how things are laid out, it should be straightforward to create a RAG and/or contextually aware chatbot separate from this framework, so long as the LLM can take text input (user turn) and return text (model turn), which can then be easily added to this.
 
 Conversation Summary
-- Once a conversation is completed, create a summary of what was dicussed in the conversation
+- Once a conversation is completed, create a summary of what was dicussed in the conversation. This is currently in-progress.

@@ -1,9 +1,11 @@
-print("\nImporting packages...\n")
+print("\nImporting packages...")
 
 import pyperclip # for copying logged convo file path to clipboard lol
 from chatbot import * # import chatbot + convo logging funcs
 from stt import * # import STT funcs
 from tts import * # import TTS funcs
+
+BREAK_CONDS = [kw.lower().strip() for kw in open("break_conditions.txt", "r").readlines() if kw.strip()]
 
 print("...packages imported. Beginning conversation.\n")
 print("-------------\n")
@@ -45,14 +47,8 @@ def main(verbose: int = True, show_timing: bool = False):
         # Get voice input from user
         user_turn, listen_time = speech_to_text() # return time to listen
 
-        # loop break condition
-        break_conds = [
-            "time to go", "exit", "I'm leaving", "bye", "i need to leave", "blep",
-            "i have to go", "i'm going to go"
-        ]
-
         # checks if break condition keywords are present in transcription
-        break_now = any(brk_cnd.lower().strip() in user_turn.lower().strip() for brk_cnd in break_conds)
+        break_now = any(brk_cnd.lower().strip() in user_turn.lower().strip() for brk_cnd in BREAK_CONDS)
 
         if verbose:    
             print(f'USER: "{user_turn}"')
